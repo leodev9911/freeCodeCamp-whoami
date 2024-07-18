@@ -5,13 +5,13 @@ const cors = require('cors');
 const path = require('path');
 
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static('views'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 });
 
-app.get('/api/whoami', (req, res) => {
+app.get('/api', (req, res) => {
     res.send('<h1>Hola</h1>');
 })
 
