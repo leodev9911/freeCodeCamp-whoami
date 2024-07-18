@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/whoami', (req, res) => {
+    res.send('<h1>Hola</h1>');
+})
+
+app.get('/api/whoami', (req, res) => {
     const acceptsLanguages = req.headers['accept-language'];
     const software = req.headers['user-agent'];
     res.send({ "ipaddress": req.ip, "language": acceptsLanguages, "software": software });
